@@ -39,7 +39,6 @@ function loadName() {
 }
 
 function init() {
-    console.log("ini");
     loadName();
 }
 
