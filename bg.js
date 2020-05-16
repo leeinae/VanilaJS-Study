@@ -11,12 +11,11 @@ function paintImage(imageNum) {
     image.src = `Images/image(${imageNum + 1}).jpg`
     image.classList.add("bgImg");
     body.appendChild(image);
-    image.addEventListener("loaded", handleImgLoad);
+    // image.addEventListener("loaded", handleImgLoad);
 }
 
 function getRandom() {
     const number = Math.floor(Math.random() * 6);
-    console.log(number);
     return number;
 }
 
