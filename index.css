@@ -11,22 +11,18 @@ body {
     display: block;
 }
 
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .bgImg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.bg-showing {
     z-index: -1;
-    animation: fadeIn;
+    opacity: 1;
 }

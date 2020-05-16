@@ -1,27 +1,41 @@
-const body = document.querySelector("body");
+const body = document.querySelector("#silder");
+const IMG_COUNT = 6;
+const SHOWING = "bg-showing";
 
-const IMG_NUMBER = 3;
+function silde() {
+    const firstSilde = document.querySelector(".bgImg:first-child");
+    const currentSilde = document.querySelector(`.${SHOWING}`);
 
-function handleImgLoad() {
-    console.log("finish"); 
+    if(currentSilde) {
+        currentSilde.classList.remove(SHOWING);
+        const nextSilde = currentSilde.nextElementSibling;
+
+        if(nextSilde) {
+            nextSilde.classList.add(SHOWING);
+        } else {
+            firstSilde.classList.add(SHOWING);
+        }
+    } else {
+        firstSilde.classList.add(SHOWING);
+    }
 }
 
-function paintImage(imageNum) {
-    const image = new Image();
-    image.src = `Images/image(${imageNum + 1}).jpg`
-    image.classList.add("bgImg");
-    body.appendChild(image);
-    // image.addEventListener("loaded", handleImgLoad);
-}
-
-function getRandom() {
-    const number = Math.floor(Math.random() * 6);
-    return number;
+function paintImage() {
+    for(var i=1; i<=IMG_COUNT; i++){
+        const image = new Image();
+        
+        image.src = `Images/image(${i}).jpg`
+        image.classList.add("bgImg");
+        if(i==1) {
+            image.classList.add("bg-showing");
+        }
+        body.appendChild(image);
+    }
 }
 
 function init() {
-    const randomNumber = getRandom();
-    paintImage(randomNumber);
+    paintImage();
 }
 
 init();
+setInterval(silde, 5000);
