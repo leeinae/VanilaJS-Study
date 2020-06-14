@@ -5,22 +5,24 @@
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div calss="js-clock">
-        <h1 class="js-title"></h1>
+    <div class="board">
+        <div calss="js-clock">
+            <h1 class="js-title"></h1>
+        </div>
+        <form class="js-form form">
+            <input type="text" placeholder="what is your name❓" />
+        </form>
+        <h4 class="js-greetings greetings"></h4>
+        <span class="js-weather"></span>
+        <form class="js-toDoForm">
+            <input type="text" placeholder="Write a to do 🎨">
+        </form>
+        <button id="prev"><b>PREV</b></button>
+        <button id="next"><b>NEXT</b></button>
+        <ul class="js-toDoList"></ul>
     </div>
-    <form class="js-form form">
-        <input type="text" placeholder="what is your name❓" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-    <span class="js-weather"></span>
-    <form class="js-toDoForm">
-        <input type="text" placeholder="Write a to do">
-    </form>
-    <ul class="js-toDoList"></ul>
     <div id="slider">
     </div>
-    <button id="prev">PREV</button>
-    <button id="next">NEXT</button>
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
